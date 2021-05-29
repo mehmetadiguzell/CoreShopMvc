@@ -1,0 +1,11 @@
+﻿
+<div class="row">
+
+    @await Component.InvokeAsync("CategoryList")
+    <!-- /.col-lg-3 -->
+
+
+    @await Component.InvokeAsync("ProductList",new { categoryId= ViewBag.CategoryId })
+    <!-- /.col-lg-9 -->
+
+</div>

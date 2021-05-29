@@ -1,0 +1,17 @@
+﻿@model List<Category>
+
+<div class="col-lg-3">
+    <h1 class="my-4">Kategoriler</h1>
+
+    <div class="list-group">
+        <a asp-controller="Home" asp-action="Index" class="list-group-item @(ViewBag.CategoryId?.ToString()==null?"active":"")">Tüm Kategoriler</a>
+    </div>
+
+    @foreach (var category in Model)
+    {
+        <div class="list-group">
+            <a asp-controller="Home" asp-action="Index" asp-route-categoryId="@category.Id" class="list-group-item @(ViewBag.CategoryId?.ToString()==category.Id.ToString()?"active":"")">@category.Name</a>
+        </div>
+    }
+</div>
+
