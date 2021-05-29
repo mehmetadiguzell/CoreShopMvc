@@ -24,9 +24,7 @@ namespace CoreShopMvc
             services.AddControllersWithViews();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                  .AddCookie(x => x.LoginPath = "/Admin/Login/Index");
-            //services.AddIdentity<IdentityUser, IdentityRole>()
-            //    .AddEntityFrameworkStores<Context>();
-            //Dependency
+            
             services.AddSingleton<ICategoryRepository, CategoryRepository>();
             services.AddSingleton<IProductRepository, ProductRepository>();
 
